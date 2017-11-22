@@ -5,8 +5,23 @@
 
 
 .socialicons {
-    
+
     @media only screen and (max-width: 700px) {
         text-align: center;
+    }
+}
+
+
+.social-link {
+    border-radius: 100px;
+    display: inline-block;
+    line-height: 1.6;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+
+    &:before {
+        font-size: 18px;
+        margin: 0 auto!important;
     }
 }

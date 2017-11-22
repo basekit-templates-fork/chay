@@ -14,36 +14,26 @@
     }
 
 
-    .form-group {
-
-        &:after {
-            background: transparentize($row-color-dark, 0.6);
-            transition: background 0.35s ease;
-        }
-
-        &:hover,
-        &:focus,
-        &:active {
-            &:after {
-                background: transparentize($row-color-dark, 0.4);
-            }
-        }
-    }
-
-
     input,
     input[type="search"],
     input[type="email"],
     input[type="password"],
     textarea,
     .input--single-line {
-        color: transparentize($row-color-dark, 0.4);
+        background: darken($row-color-light, 10%);
+        color: lighten($row-color-dark, 0.15);
+
+        &:hover,
+        &:focus,
+        &:active {
+             background: $row-color-light;
+        }
     }
 
 
-    .button {
-        background-color: $row-color-accent;
-        box-shadow: 2px 4px 12px rgba(0,0,0,0.1);
+    .button,
+    .social-link {
+        background-color: $row-color-dark;
         color: $row-color-light;
     }
 
@@ -80,7 +70,7 @@
 
 
     .item-name--parent:after {
-        border-top-color: lighten($row-color-dark, 25%);
+        border-color: lighten($row-color-dark, 25%);
     }
 
 
@@ -91,42 +81,12 @@
     }
 
 
-    .social-link {
-        color: $row-color-dark;
-    }
-
-
     .phone-number-link {
         color: transparentize($row-color-dark, 0.4);
 
         @media #{$mobile} {
             background-color: $row-color-accent;
             color: $row-color-light;
-        }
-    }
-
-
-    .row--background-type-image {
-
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at center, rgba(43, 43, 60, 0.1) 0%,rgba(43, 43, 60, 0.35) 70%,rgba(43, 43, 60, 0.635) 100%);
-        }
-
-
-        p, ul, li, ol, .p-font {
-            color: lighten($row-color-dark, 65%);
-        }
-
-
-        .row__container {
-            position: relative;
-            z-index: 1;
         }
     }
 }

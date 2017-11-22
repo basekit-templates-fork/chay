@@ -236,3 +236,12 @@
         }
     }
 }
+
+
+#page-zones__footer .widget__extendednavigation {
+    @media #{$tablet} {
+        display: none;
+        visibility: hidden;
+    }
+}
+

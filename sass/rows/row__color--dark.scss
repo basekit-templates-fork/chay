@@ -10,7 +10,7 @@
 
 
     p, ul, li, ol, .p-font {
-        color: transparentize($row-color-light, 0.2);
+        color: transparentize($row-color-light, 0.15);
     }
 
 
@@ -36,14 +36,22 @@
     input[type="password"],
     textarea,
     .input--single-line {
-        color: transparentize($row-color-light, 0.2);
+        background-color: $row-color-light;
+        color: lighten($row-color-dark, 0.15);
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $row-color-light;
+        }
     }
 
 
-    .button {
+    .button,
+    .social-link {
         background-color: $row-color-accent;
         box-shadow: 2px 4px 12px rgba(0,0,0,0.1);
-        color: $row-color-light;
+        color: $row-color-dark;
     }
 
 
@@ -86,44 +94,15 @@
             color: $row-color-light;
         }
     }
-
-    .social-link {
-        color: $row-color-light;
-    }
-
-
-    .row--background-type-image {
-
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at center, rgba(43, 43, 60, 0.1) 0%,rgba(43, 43, 60, 0.35) 70%,rgba(43, 43, 60, 0.635) 100%);
-        }
-
-
-        p, ul, li, ol, .p-font {
-            color: lighten($row-color-light, 65%);
-        }
-
-
-        .row__container {
-            position: relative;
-            z-index: 1;
-        }
-    }
 }
 
 
 .row--background-type-image {
 
     &:after {
-        background: radial-gradient(ellipse at center, transparentize($row-color-dark, 0.9) 0%, transparentize($row-color-dark, 0.7) 70%, transparentize($row-color-dark, 0.4) 100%);
+        background: radial-gradient(ellipse at center, transparentize($row-color-dark, 0.75) 0%, transparentize($row-color-dark, 0.6) 70%, transparentize($row-color-dark, 0.4) 100%);
         content: "";
-        position: absoloute;
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;
@@ -136,23 +115,45 @@
         z-index: 1;
     }
 
+    h1 {
+        font-size: bkscale($font__h1--font-size, 0.85);
+        line-height: bkscale($font__h1--line-height, 0.85);
+    }
+
     h1,
     h2,
     h3,
     h4,
     label {
+        background: $row-color-dark;
         color: $row-color-light;
+        display: table;
+        margin-bottom: 12px;
+        padding: 15px 20px 5px;
+        word-break: break-word;
+    }
+
+    h1[style="text-align: right;"] {
+        margin-left: auto;
+    }
+
+    h1[style="text-align: left;"] {
+        margin-right: auto;
+    }
+
+    h1[style="text-align: center;"] {
+        margin: 0 auto 12px;
     }
 
 
     p, ul, li, ol, .p-font {
-        color: transparentize($row-color-light, 0.2);
+        color: $row-color-light;
     }
 
 
     .button,
     button {
         background-color: $row-color-accent;
-        color: $row-color-light;
+        color: $row-color-dark;
     }
 }
